@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import Home from '@/Pages/Home.vue'
 import About from '@/Pages/About.vue'
 import NotFound from '@/Pages/NotFound.vue'
+import BaseLayout from './Layouts/BaseLayout.vue';
 
 const routes = {
     '/': Home,
@@ -21,8 +22,7 @@ const currentView = computed(() => {
 </script>
 
 <template>
-    <a class="bg-red-500 p-2 rounded" href="/test/#/">Home</a> |
-    <a href="/test/#/about">About</a> |
-    <a href="/test/#/non-existent-path">Broken Link</a>
-    <component :is="currentView" />
+    <BaseLayout>
+        <component :is="currentView" />
+    </BaseLayout>
 </template>

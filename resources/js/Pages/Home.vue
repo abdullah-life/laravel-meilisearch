@@ -1,16 +1,22 @@
 <script setup>
 import axios from 'axios';
 import { onMounted, ref } from 'vue';
+import HomeStats from '../Components/HomeStats.vue';
+import Table from '../Components/Table.vue';
 
 const data = ref()
 
 async function getData() {
-  try {
-    const response = await axios.get('https://se-dev.lifepharmacy.com/health');
-    data.value = response.data
-  } catch (error) {
-    console.error(error);
-  }
+    try {
+        const response = await axios.get('https://se-dev.lifepharmacy.com/stats', {
+            headers: {
+                'Authorization': 'Bearer Y0urVery-S3cureAp1K3y'
+            }
+        });
+        data.value = response.data
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 onMounted(() => {
@@ -20,21 +26,14 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="bg-white">
-        <div class="py-24 px-6 sm:px-6 sm:py-32 lg:px-8">
-            <div class="mx-auto max-w-2xl text-center">
-                <h2 class="text-4xl font-bold tracking-tight text-gray-900">Boost your productivity.<br />Start using
-                    our app today.</h2>
-                <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600 bg-red-400">now</p>
-                <p>{{ data }}</p>
-                <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="#"
-                        class="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
-                        started</a>
-                    <a href="#" class="text-base font-semibold leading-7 text-gray-900">Learn more <span
-                            aria-hidden="true">→</span></a>
-                </div>
-            </div>
+    <div class="py-12">
+        <div>
+            <h3 class="pb-2 text-gray-600 font-medium text-xl">Overview:</h3>
+            <HomeStats :d="data"></HomeStats>
+        </div>
+        <div class="mt-4">
+            <h3 class="pb-2 text-gray-600 font-medium text-xl">Available Indexes:</h3>
+            <Table :records="data?.indexes"></Table>
         </div>
     </div>
 </template>
