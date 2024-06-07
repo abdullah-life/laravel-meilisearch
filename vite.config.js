@@ -6,6 +6,7 @@ import path from 'path';
 export default defineConfig({
     plugins: [
         laravel({
+            hotFile: 'public/vendor/laravel-meilisearch/laravel-meilisearch.hot',
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
             buildDirectory: 'vendor/laravel-meilisearch',

@@ -25,8 +25,7 @@ onMounted(() => {
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-4xl font-bold tracking-tight text-gray-900">Boost your productivity.<br />Start using
                     our app today.</h2>
-                <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">Incididunt sint fugiat pariatur
-                    cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea.</p>
+                <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600 bg-red-400">now</p>
                 <p>{{ data }}</p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
                     <a href="#"
