@@ -78,6 +78,5 @@ return [
         'meilisearch_key' => env('MEILISEARCH_KEY', ''),
         'enable_events' => true,
         'enable_rules' => true
-        
     ],
 ];
