@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'host' => env('MEILISEARCH_HOST', 'https://se-dev.lifepharmacy.com'),
-    'key' => env('MEILISEARCH_KEY', 'Y0urVery-S3cureAp1K3y'),
+    'host' => env('MEILISEARCH_HOST', 'http://127.0.0.1:7700'),
+    'key' => env('MEILISEARCH_KEY', 'masterKey'),
 
 ];
