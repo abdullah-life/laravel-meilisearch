@@ -1,0 +1,55 @@
+{
+    "name": "abdullah-k/laravel-meilisearch",
+    "description": "Meilisearch admin panel for Laravel",
+    "keywords": [
+        "abdullah-k",
+        "laravel-meilisearch"
+    ],
+    "homepage": "https://github.com/abdullah-k/laravel-meilisearch",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Abdullah K",
+            "email": "abdullah.azh@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "laravel/framework": "^8.37|^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AbdullahK\\LaravelMeilisearch\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AbdullahK\\LaravelMeilisearch\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AbdullahK\\LaravelMeilisearch\\LaravelMeilisearchServiceProvider"
+            ],
+            "aliases": {
+                "LaravelMeilisearch": "AbdullahK\\LaravelMeilisearch\\LaravelMeilisearchFacade"
+            }
+        }
+    }
+}
